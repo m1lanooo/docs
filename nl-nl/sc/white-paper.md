@@ -1,4 +1,4 @@
-# NeoContract White Paper Test
+# NeoContract White Paper 
 
 ## 1. Voorwoord
 
