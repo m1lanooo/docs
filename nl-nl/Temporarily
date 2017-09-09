@@ -1,4 +1,4 @@
-# API Reference
+# API Referentie
 
 Elke node in de Neo-CLI biedt een API-interface voor het verkrijgen van blockchain-gegevens van een node. waardoor het makkelijk is om blockchain-applicaties te ontwikkelen. De interface wordt geleverd via JSON-RPC, en het onderliggende protocol maakt gebruik van HTTP / HTTPS om te kunnen communiceren. Om een knooppunt te starten met RPC-service wordt de volgende opdracht uitgevoerd:
 
@@ -32,33 +32,34 @@ Voor P2P en WebSocket informatie zie [Node/Introduction](introduction.md)。
 
 | Commando                                       | Referentie                                      | Uitleg                         | Comments       |
 | ---------------------------------------- | --------------------------------------- | -------------------------- | -------- |
-| [getbalance](api/getbalance.md)          | \<asset_id>                             |Returns the balance of the corresponding asset in the wallet according to the specified asset number.   | Need to open the wallet   |
-| [getbestblockhash](api/getbestblockhash.md) |                                         | Gets the hash of the tallest block in the main chain           |          |
+| [getbalance](api/getbalance.md)          | \<asset_id>                             |Geeft het saldo van het overeenkomstige actief in de portemonnee op volgens het opgegeven activa nummer.   | De portemonnee moet hierbij geopend worden   |
+| [getbestblockhash](api/getbestblockhash.md) |                                         | Krijgt de hash van het langste blok in de hoofdketen           |          |
 | [getblock](api/getblock.md)              | \<hash> [verbose=0]                     | Returns the corresponding block information according to the specified hash value         |          |
-| [getblock](api/getblock2.md)             | \<index> [verbose=0]                    | Returns the corresponding block information according to the specified index          |          |
-| [getblockcount](api/getblockcount.md)    |                                         | Gets the number of blocks in the main chain                 |          |
-| [getblockhash](api/getblockhash.md)      | \<index>                                | Returns the hash value of the corresponding block based on the specified index         |          |
-| [getconnectioncount](api/getconnectioncount.md) |                                         | Gets the current number of connections for the node                 |          |
-| [getrawmempool](api/getrawmempool.md)    |                                         | Get a list of unrecognized transactions in memory            |          |
-| [getrawtransaction](api/getrawtransaction.md) | \<txid> [verbose=0]                     | Returns the corresponding transaction information based on the specified hash value         |          |
-| [gettxout](api/gettxout.md)              | \<txid> \<n>                            | Returns the corresponding transaction output (change) information based on the specified hash and index |          |
-| [sendrawtransaction](api/sendrawtransaction.md) | \<hex>                                  | Broadcast a transaction over the network. See the [network protocol](network-protocol.md) documentation.                       |          |
-| [sendtoaddress](api/sendtoaddress.md)    | \<asset_id> \<address> \<value> [fee=0] | Transfer to specified address                     | Need to open the wallet   |
-| submitblock                              | \<hex>                                  | Submit new blocks                      | Needs to be a consensus node |
+| [getblock](api/getblock2.md)             | \<index> [verbose=0]                    | Geeft de bijbehorende blokinformatie terug volgens de opgegeven hashwaarde          |          |
+| [getblockcount](api/getblockcount.md)    |                                         | Krijgt het aantal blokken in de hoofdketen                 |          |
+| [getblockhash](api/getblockhash.md)      | \<index>                                | Retouneert de hashwaarde van het corresponderende blok op basis van de opgegeven index
+         |          |
+| [getconnectioncount](api/getconnectioncount.md) |                                         | Ontvang het huidige aantal verbindingen voor de node                 |          |
+| [getrawmempool](api/getrawmempool.md)    |                                         | Krijg een lijst van niet-erkende transacties in het geheugen            |          |
+| [getrawtransaction](api/getrawtransaction.md) | \<txid> [verbose=0]                     | Retourneert de bijbehorende transactiegegevens op basis van de opgegeven hashwaarde         |          |
+| [gettxout](api/gettxout.md)              | \<txid> \<n>                            | Retourneert de bijbehorende transactieuitvoer (verandering) informatie op basis van de opgegeven hash en index |          |
+| [sendrawtransaction](api/sendrawtransaction.md) | \<hex>                                  | Zendt een transactie over het netwerk uit. Zie de documentatie [netwerkprotocol] (network-protocol.md)                       |          |
+| [sendtoaddress](api/sendtoaddress.md)    | \<asset_id> \<address> \<value> [fee=0] | Overboeken naar een specifiek adres                     | De portemonnee moet hierbij geopend worden   |
+| submitblock                              | \<hex>                                  | Indienne nieuwe blokken                      | Moet een consensus node zijn |
 
-## GET request example
+## GET aanvraag voorbeeld
 
-A typical JSON-RPC GET request format is as follows:
+Een typisch JSON-RPC GET aanvraag formaat gaat als volgt:
 
-The following is an example of how to get the number of blocks in the main chain.
+Hieronder vindt men een voorbeeld hoe u het aantal blokken in de hoofdketen kunt krijgen.
 
-Request URL:
+Verzoek URL:
 
 ```
 http://somewebsite.com:10332?jsonrpc=2.0&method=getblockcount&params=[]&id=1
 ```
 
-After sending the request, you will get the following response:
+Nadat u het verzoek heeft verzonden, krijgt u het volgende antwoord:
 
 ```json
 {
@@ -68,13 +69,13 @@ After sending the request, you will get the following response:
 }
 ```
 
-## POST request example
+## POST aanvraag voorbeeld
 
-The format of a typical JSON-RPC Post request is as follows:
+Het formaat van een typische JSON-RPC Post aanvraag is als volgt:
 
-The following is an example of how to get the number of blocks in the main chain.
+Hieronder vindt men een voorbeeld hoe u het aantal blokken in de hoofdketen kunt krijgen.
 
-Request URL:
+Aanvraag URL:
 
 ```
 http://somewebsite.com:10332
@@ -91,7 +92,7 @@ Request Body：
 }
 ```
 
-After sending the request, you will get the following response：
+Nadat u het verzoek heeft verzonden, krijgt u het volgende antwoord：
 
 ```json
 {
@@ -103,12 +104,12 @@ After sending the request, you will get the following response：
 
 ## Test tools
 
-You can use the Chrome extension in Postman to facilitate the test (Installation of the Chrome extension requires a scientific Internet), the following is a test screenshot:
+U kunt de Chrome-extensie in Postman gebruiken om de test te vergemakkelijken (installatie van de Chrome-extensie vereist een wetenschappelijk internet), de volgende afbeelding is een test screenshot:
 
 ![image](http://docs.neo.org/images/2017-05-17_17-06-20.jpg)
 
 ![image](http://docs.neo.org/images/2017-05-17_16-55-58.jpg)
 
-## Other
+## Overige
 
 [C# JSON-RPC Command List](https://github.com/chenzhitong/CSharp-JSON-RPC/blob/master/json_rpc/Program.cs)
